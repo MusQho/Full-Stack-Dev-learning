@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Jurnal learn Full-Stack Web Developer and college preparation informatics engineering by Alby ">
     <title>Lists and Tables</title>
 </head>
 
@@ -71,20 +72,21 @@
         <h1>Campus registration form</h1>
 
         <form>
-            <label>Nama Lengkap:</label>
-            <input type="text" placeholder="Isikan nama anda">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" placeholder="Isikan nama anda">
             <br>
-            <label>Email:</label>
-            <input type="email" placeholder="Masukkan Email">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Masukkan Email">
             <br>
-            <label>Password akun:</label>
-            <input type="password" placeholder="Masukkan password">
+            <label for="password">Password akun:</label>
+            <input type="password" id="password" placeholder="Masukkan password">
             <br>
-            <label>No. Handphone:</label>
-            <input type="number" placeholder="Masukkan No. Handphone">
+            <label for="handphone">No. Handphone:</label>
+            <input type="number" id="handphone" placeholder="Masukkan No. Handphone">
             <br>
             <button type="submit">Daftar Sekarang</button>
         </form>
+        <!-- penggunaan for pada label dan id pada input berguna agar saat user mengklik tulisan pada label akan langsung mengaktifkan tabel input (akan berkedip) -->
     </section>
 
     <footer>
