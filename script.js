@@ -13,3 +13,7 @@ function createStatuMessage(hari) {
 
 alert(createStatuMessage(daysStudied));
 alert(createStatuMessage(10));
+
+for (let i = 1; i <= 5; i++) {
+    console.log("Perulangan ke- " + i);
+}
