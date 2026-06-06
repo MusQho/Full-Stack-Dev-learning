@@ -25,7 +25,9 @@ for (let i = 0; i < skills.length; i++) {
 
 const headingTitle = document.getElementById("name-title");
 const submitButton = document.getElementById("submit");
-submitButton.addEventListener("click", function(){
+submitButton.addEventListener("click", function(e){
+    // preventDefault is used to prevent page refresh.
+    e.preventDefault();
     headingTitle.innerText = "Welcome to Alby's Tech Space!";
     headingTitle.style.color = "#1d4ed8";
     headingTitle.style.fontSize = "3rem";
