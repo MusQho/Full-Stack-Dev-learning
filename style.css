@@ -1,0 +1,103 @@
+:root {
+            --primary-color: #1e293b;
+            --accent-color: #3b82f6;
+            --bg-color: #f8fafc;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            font-family: sans-serif;
+            color: #334155;
+            padding: 20px;
+            padding-top: 70px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            padding: 15px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        table {
+            background-color: #ffffff;
+        }
+
+        th {
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        #skill ul {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            padding: 0;
+            list-style: none;
+        }
+
+        #submit {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #submit:hover {
+            background-color: #1d4ed8;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            /* All CSS code in here will only be active if the browser screen size is 768px wide or smaller (HP) */
+
+            #skill ul {
+                display: grid;
+                grid-template-columns: 1fr;
+            }
+        }
