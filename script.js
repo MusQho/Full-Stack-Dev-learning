@@ -24,7 +24,11 @@ for (let i = 0; i < skills.length; i++) {
 };
 
 const headingTitle = document.getElementById("name-title");
-headingTitle.innerText = "Welcome to Alby's Tech Space!";
-headingTitle.style.color = "#1d4ed8";
-headingTitle.style.fontSize = "3rem";
-headingTitle.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.4)";
+const submitButton = document.getElementById("submit");
+submitButton.addEventListener("click", function(){
+    headingTitle.innerText = "Welcome to Alby's Tech Space!";
+    headingTitle.style.color = "#1d4ed8";
+    headingTitle.style.fontSize = "3rem";
+    headingTitle.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.4)";
+    alert("Tombol berhasil diKlik");
+});
