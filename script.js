@@ -17,3 +17,8 @@ alert(createStatuMessage(10));
 for (let i = 1; i <= 5; i++) {
     console.log("Perulangan ke- " + i);
 }
+
+const skills = ["HTML", "CSS", "JAVASCRIPT", "PYTHON"];
+for (let i = 0; i < skills.length; i++) {
+    console.log("Keahlian Saya: " + skills[i])
+};
