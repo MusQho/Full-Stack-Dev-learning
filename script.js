@@ -22,3 +22,6 @@ const skills = ["HTML", "CSS", "JAVASCRIPT", "PYTHON"];
 for (let i = 0; i < skills.length; i++) {
     console.log("Keahlian Saya: " + skills[i])
 };
+
+const headingTitle = document.getElementById("name-title");
+headingTitle.innerText = "Welcome to Alby's Tech Space!";
