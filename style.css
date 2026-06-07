@@ -108,6 +108,15 @@ p {
     padding-top: 60px;
 }
 
+#skill ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 0;
+    line-height: 30px;
+    list-style: none;
+}
+
 #education {
     padding: 20px;
     padding-top: 60px;
@@ -129,13 +138,6 @@ section {
     margin-bottom: 30px;
 }
 
-#skill ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    padding: 0;
-    list-style: none;
-}
 
 #contact {
     padding: 20px;

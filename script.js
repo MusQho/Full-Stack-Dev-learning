@@ -51,12 +51,14 @@ const developerProfile = {
 console.log(developerProfile.role);
 
 const studyHistory = [
+    {course: "HTML", duration: 15, isDone: true},
     {course: "CSS", duration: 14, isDone: true},
     {course: "JAVASCRIPT", duration: 15, isDone: false},
 ];
 
 console.log(studyHistory[1].course);
 
+const listContainer = document.getElementById("history-list");
 for(let i = 0; i < studyHistory.length; i++) {
-    console.log("Modul: " + studyHistory[i].course + " ditempuh dalam " + studyHistory[i].duration + " hari.")
+    listContainer.innerHTML += "<li>Modul: " + studyHistory[i].course + " (" + studyHistory[i].duration + " days)</li>";
 }
