@@ -49,3 +49,10 @@ const developerProfile = {
 }
 
 console.log(developerProfile.role);
+
+const studyHistory = [
+    {course: "CSS", duration: 14, isDone: true},
+    {course: "JAVASCRIPT", duration: 15, isDone: false},
+];
+
+console.log(studyHistory[1].course);
