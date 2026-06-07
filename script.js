@@ -37,6 +37,6 @@ submitButton.addEventListener("click", function (e) {
     }
 
     headingTitle.innerText = "Welcome to Alby's Tech Space!";
-    headingTitle.classList.add("active-title");
+    headingTitle.classList.toggle("active-title");
     alert("Halo " + visitorName + ", pesan kamu berhasil terkirim!");
 });
