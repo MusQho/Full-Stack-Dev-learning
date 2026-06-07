@@ -37,8 +37,6 @@ submitButton.addEventListener("click", function (e) {
     }
 
     headingTitle.innerText = "Welcome to Alby's Tech Space!";
-    headingTitle.style.color = "#1d4ed8";
-    headingTitle.style.fontSize = "3rem";
-    headingTitle.style.textShadow = "2px 2px 4px rgba(0, 0, 0, 0.4)";
+    headingTitle.classList.add("active-title");
     alert("Halo " + visitorName + ", pesan kamu berhasil terkirim!");
 });

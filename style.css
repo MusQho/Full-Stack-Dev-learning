@@ -16,6 +16,12 @@ header {
     margin-bottom: 40px;
 }
 
+.active-title {
+    color: #1d4ed8;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
 body {
     background-color: var(--bg-color);
     font-family: sans-serif;
