@@ -40,3 +40,12 @@ submitButton.addEventListener("click", function (e) {
     headingTitle.classList.toggle("active-title");
     alert("Halo " + visitorName + ", pesan kamu berhasil terkirim!");
 });
+
+const developerProfile = {
+    name: "MUH. DHUHA QOLBY TAQIYYA",
+    role: "Full-Stack Web Developer",
+    daysStudied: 41,
+    isGraduateCSS: true
+}
+
+console.log(developerProfile.role);
