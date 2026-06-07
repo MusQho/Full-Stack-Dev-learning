@@ -30,6 +30,12 @@ submitButton.addEventListener("click", function (e) {
     // preventDefault is used to prevent page refresh.
     e.preventDefault();
     const visitorName = nameInput.value;
+
+    if (visitorName === "") {
+        alert("Nama tidak boleh kosong! Tolong isi terlebih dahulu.");
+        return;
+    }
+
     headingTitle.innerText = "Welcome to Alby's Tech Space!";
     headingTitle.style.color = "#1d4ed8";
     headingTitle.style.fontSize = "3rem";
