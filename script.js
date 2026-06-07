@@ -62,3 +62,9 @@ const listContainer = document.getElementById("history-list");
 for(let i = 0; i < studyHistory.length; i++) {
     listContainer.innerHTML += "<li>Modul: " + studyHistory[i].course + " (" + studyHistory[i].duration + " days)</li>";
 }
+
+JSON = [
+    {"course": "HTML", "duration": 15, "isDone": true},
+    {"course": "CSS", "duration": 14, "isDone": true},
+    {"course": "JAVASCRIPT", "duration": 15, "isDone": false} 
+]
