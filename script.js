@@ -56,3 +56,7 @@ const studyHistory = [
 ];
 
 console.log(studyHistory[1].course);
+
+for(let i = 0; i < studyHistory.length; i++) {
+    console.log("Modul: " + studyHistory[i].course + " ditempuh dalam " + studyHistory[i].duration + " hari.")
+}
