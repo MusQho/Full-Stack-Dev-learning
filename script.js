@@ -81,3 +81,7 @@ console.log(parsedData[0].course);
 localStorage.setItem("localStudyData", studyHistoryJSON);
 
 console.log("Data berhasil dikunci kedalam localStorage");
+
+const ambilDataText = localStorage.getItem("localStudyData");
+const bongkarTextData = JSON.parse(ambilDataText);
+console.log(bongkarTextData[1].course);
