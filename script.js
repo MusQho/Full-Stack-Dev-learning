@@ -71,4 +71,9 @@ for(let i = 0; i < studyHistory.length; i++) {
 
 const studyHistoryJSON = JSON.stringify(studyHistory);
 
-console.log(studyHistoryJSON)
+console.log(studyHistoryJSON);
+
+const dataKirimanServer = studyHistoryJSON;
+
+const parsedData = JSON.parse(dataKirimanServer);
+console.log(parsedData[0].course);
