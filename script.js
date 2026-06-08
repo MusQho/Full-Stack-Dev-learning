@@ -85,3 +85,21 @@ console.log("Data berhasil dikunci kedalam localStorage");
 const ambilDataText = localStorage.getItem("localStudyData");
 const bongkarTextData = JSON.parse(ambilDataText);
 console.log(bongkarTextData[1].course);
+
+const counterDisplay = document.getElementById("counter-display");
+const incrementBtn = document.getElementById("increment-btn");
+
+let currentData = localStorage.getItem("savedData");
+
+if (currentData !== null) {
+    currentData = Number(currentData);
+} 
+else {
+    currentData = 0;
+} 
+
+incrementBtn.addEventListener("click", function(){
+    currentData++
+    counterDisplay.innerText = currentData;
+    localStorage.setItem("savedData", currentData);
+});
