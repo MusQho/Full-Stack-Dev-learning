@@ -167,13 +167,6 @@ function mulaiKetik() {
     });
 }
 
-function eror() {
-    return new Promise(function (reject) {
-        setTimeout(function(){
-            reject("Gagal: Modul tidak dapat diketik");
-        }, 2000);
-    });
-}
 downloadModulModern()
     .then(function(pesanSukses) {
         console.log(pesanSukses);
