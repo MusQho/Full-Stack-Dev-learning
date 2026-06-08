@@ -78,6 +78,6 @@ const dataKirimanServer = studyHistoryJSON;
 const parsedData = JSON.parse(dataKirimanServer);
 console.log(parsedData[0].course);
 
-localStorage.setItem("localStudyData", "studyHistoryJSON");
+localStorage.setItem("localStudyData", studyHistoryJSON);
 
 console.log("Data berhasil dikunci kedalam localStorage");
