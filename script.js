@@ -160,9 +160,15 @@ function downloadModulModern() {
 }
 
 function mulaiKetik() {
-    return new Promise(function (resolve) {
+    return new Promise(function (resolve, reject) {
         setTimeout(function(){
-            resolve("Sukses 2: Mulai mengetik kode pemrograman modern.");
+            let a = false;
+            if (a) {
+                resolve("Sukses 2: Mulai mengetik kode pemrograman modern.");
+            }
+            else {
+                reject("Gagal: Keyboard error, tidak bisa mengetik");
+            }
         }, 2000);
     });
 }
@@ -174,4 +180,7 @@ downloadModulModern()
     })
     .then(function(pesanSukses) {
         console.log(pesanSukses);
+    })
+    .catch(function(pesanGagal){ // it will run if second Promise false/rejected
+        console.log(pesanGagal);
     });
