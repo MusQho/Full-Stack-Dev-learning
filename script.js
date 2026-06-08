@@ -128,7 +128,7 @@ incrementBtn.addEventListener("click", function () {
 
 function cekKelulusanCSS() {
     // make a promise with "new" in front of it
-    return new Promise (function(resolve, reject) {
+    return new Promise(function (resolve, reject) {
         let lulus = false;
 
         if (lulus) {
@@ -142,11 +142,43 @@ function cekKelulusanCSS() {
 }
 
 cekKelulusanCSS()
-// if the status is resolved then it will be thrown at ".then"
-.then(function(pesanSukses) {
-    console.log(pesanSukses); // it will display resolve("...")
-})
-// if the status is rejected then it will be thrown at ".catch"
-.catch(function(pesanGagal) {
-console.log(pesanGagal); //it will display reject("...")
-});
+    // if the status is resolved then it will be thrown at ".then"
+    .then(function (pesanSukses) {
+        console.log(pesanSukses); // it will display resolve("...")
+    })
+    // if the status is rejected then it will be thrown at ".catch"
+    .catch(function (pesanGagal) {
+        console.log(pesanGagal); //it will display reject("...")
+    });
+
+function downloadModulModern() {
+    return new Promise(function (resolve) {
+        setTimeout(function() {
+            resolve("Sukses 1: Modul JavaScript Berhasil Di-download.");
+        }, 2000);
+    });
+}
+
+function mulaiKetik() {
+    return new Promise(function (resolve) {
+        setTimeout(function(){
+            resolve("Sukses 2: Mulai mengetik kode pemrograman modern.");
+        }, 2000);
+    });
+}
+
+function eror() {
+    return new Promise(function (reject) {
+        setTimeout(function(){
+            reject("Gagal: Modul tidak dapat diketik");
+        }, 2000);
+    });
+}
+downloadModulModern()
+    .then(function(pesanSukses) {
+        console.log(pesanSukses);
+        return mulaiKetik(); // connecting 2 Promise
+    })
+    .then(function(pesanSukses) {
+        console.log(pesanSukses);
+    });
