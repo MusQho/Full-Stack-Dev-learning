@@ -103,3 +103,11 @@ incrementBtn.addEventListener("click", function(){
     counterDisplay.innerText = currentData;
     localStorage.setItem("savedData", currentData);
 });
+
+
+console.log("Langkah 1: Menyalakan Pc");
+// setTimeout if you want call once
+setTimeout(function() {
+    console.log("Lngkah 2: Windows berhasil dimuat") // The text will appear last after the delay time is over.
+}, 2000); // don't forget put a comma before the time delay
+console.log("Langkah 3: Membuka VS code");
