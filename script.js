@@ -11,8 +11,8 @@ function createStatuMessage(hari) {
     }
 }
 
-alert(createStatuMessage(daysStudied));
-alert(createStatuMessage(10));
+// alert(createStatuMessage(daysStudied));
+// alert(createStatuMessage(10));
 
 for (let i = 1; i <= 5; i++) {
     console.log("Perulangan ke- " + i);
@@ -51,15 +51,15 @@ const developerProfile = {
 console.log(developerProfile.role);
 
 const studyHistory = [
-    {course: "HTML", duration: 15, isDone: true},
-    {course: "CSS", duration: 14, isDone: true},
-    {course: "JAVASCRIPT", duration: 15, isDone: false},
+    { course: "HTML", duration: 15, isDone: true },
+    { course: "CSS", duration: 14, isDone: true },
+    { course: "JAVASCRIPT", duration: 15, isDone: false },
 ];
 
 console.log(studyHistory[1].course);
 
 const listContainer = document.getElementById("history-list");
-for(let i = 0; i < studyHistory.length; i++) {
+for (let i = 0; i < studyHistory.length; i++) {
     listContainer.innerHTML += "<li>Modul: " + studyHistory[i].course + " (" + studyHistory[i].duration + " days)</li>";
 }
 
@@ -93,21 +93,32 @@ let currentData = localStorage.getItem("savedData");
 
 if (currentData !== null) {
     currentData = Number(currentData);
-} 
+}
 else {
     currentData = 0;
-} 
+}
 
-incrementBtn.addEventListener("click", function(){
+incrementBtn.addEventListener("click", function () {
     currentData++
     counterDisplay.innerText = currentData;
     localStorage.setItem("savedData", currentData);
 });
 
 
-console.log("Langkah 1: Menyalakan Pc");
-// setTimeout if you want call once
-setTimeout(function() {
-    console.log("Lngkah 2: Windows berhasil dimuat") // The text will appear last after the delay time is over.
-}, 2000); // don't forget put a comma before the time delay
-console.log("Langkah 3: Membuka VS code");
+// console.log("Langkah 1: Menyalakan Pc");
+// // setTimeout if you want call once
+// setTimeout(function() {
+//     console.log("Lngkah 2: Windows berhasil dimuat") // The text will appear last after the delay time is over.
+// }, 2000); // don't forget put a comma before the time delay
+// console.log("Langkah 3: Membuka VS code");
+
+function downloadModul(selesaiCallback) {
+    setTimeout(function () {
+        console.log("Proses: Modul JavaScript Berhasil Di-download."); //This text will appear first
+        selesaiCallback(); //parameters that will call downloadModul(function () {...});
+    }, 3000);
+}
+
+downloadModul(function () {
+    console.log("Selesai: Membuka materi bimbingan Day 52."); //This text will appear last
+});
