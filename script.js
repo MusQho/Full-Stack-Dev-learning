@@ -112,16 +112,41 @@ incrementBtn.addEventListener("click", function () {
 // }, 2000); // don't forget put a comma before the time delay
 // console.log("Langkah 3: Membuka VS code");
 
-function downloadModul(selesaiCallback) {
-    setTimeout(function () {
-        console.log("Proses: Modul JavaScript Berhasil Di-download."); //This text will appear first
-        selesaiCallback(); //parameters that will call downloadModul(function () {...});
-    }, 3000);
+// function downloadModul(selesaiCallback) {
+//     setTimeout(function () {
+//         console.log("Proses: Modul JavaScript Berhasil Di-download."); //This text will appear first
+//         selesaiCallback(); //parameters that will call downloadModul(function () {...});
+//     }, 3000);
+// }
+
+// downloadModul(function () {
+//     console.log("Selesai: Membuka materi bimbingan Day 52."); //This text will appear last
+//     setTimeout(function () {
+//         console.log("Proses Akhir: Mulai mengetik kode pemrograman.");
+//     }, 2000);
+// });
+
+function cekKelulusanCSS() {
+    // make a promise with "new" in front of it
+    return new Promise (function(resolve, reject) {
+        let lulus = false;
+
+        if (lulus) {
+            resolve("Selamat Alby, Anda lulus CSS"); //resolve used if the process is successful in this case if lulus = true
+        }
+        else {
+            reject("Maaf Alby, Anda harus mengulang CSS"); //reject used if the process is unsuccessful in this case if lulus = false
+            // for example: internet connection lost, file not found
+        }
+    });
 }
 
-downloadModul(function () {
-    console.log("Selesai: Membuka materi bimbingan Day 52."); //This text will appear last
-    setTimeout(function () {
-        console.log("Proses Akhir: Mulai mengetik kode pemrograman.");
-    }, 2000);
+cekKelulusanCSS()
+// if the status is resolved then it will be thrown at ".then"
+.then(function(pesanSukses) {
+    console.log(pesanSukses); // it will display resolve("...")
+})
+// if the status is rejected then it will be thrown at ".catch"
+.catch(function(pesanGagal) {
+console.log(pesanGagal); //it will display reject("...")
 });
