@@ -121,4 +121,7 @@ function downloadModul(selesaiCallback) {
 
 downloadModul(function () {
     console.log("Selesai: Membuka materi bimbingan Day 52."); //This text will appear last
+    setTimeout(function () {
+        console.log("Proses Akhir: Mulai mengetik kode pemrograman.");
+    }, 2000);
 });
