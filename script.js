@@ -203,7 +203,11 @@ async function ambilDataInternet() {
     try {
         const dataAsliDisplay = document.getElementById("api-title");
 
-        const responMentah = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+        const angkaAcak = Math.floor(Math.random() * 200) + 1;
+        //Math.floor works for number becomes an integer
+        //Math.random works for regenerate random number
+        console.log(angkaAcak);
+        const responMentah = await fetch(`https://jsonplaceholder.typicode.com/todos/${angkaAcak}`);
         const dataAsli = await responMentah.json();
         console.log("Judul tugas dari internet:", dataAsli.title);
 
