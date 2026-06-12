@@ -201,12 +201,18 @@ eksekusiBelajar();
 
 async function ambilDataInternet() {
     try {
+        const dataAsliDisplay = document.getElementById("api-title");
+
         const responMentah = await fetch("https://jsonplaceholder.typicode.com/todos/1");
         const dataAsli = await responMentah.json();
         console.log("Judul tugas dari internet:", dataAsli.title);
+
+        dataAsliDisplay.innerText = "Judul tugas dari internet: " + (dataAsli.title);
     }
     catch (error){
         console.log("Koneksi gagal:", error);
+
+        document.getElementById("api-title").innerText = ("Gagal memuat data. Periksa koneksi internet Anda."); // The element must be called again because its scope is different.
     }
 }
 
