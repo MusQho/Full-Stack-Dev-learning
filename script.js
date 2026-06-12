@@ -200,15 +200,27 @@ eksekusiBelajar();
 
 
 async function ambilDataInternet() {
-    try {
-        const quoteDisplay = document.getElementById("api-quote");
-        const authorDisplay = document.getElementById("api-author");
+    const quoteDisplay = document.getElementById("api-quote");
+    const authorDisplay = document.getElementById("api-author");
+    // put variables outside the try{...} blok so they can be accessed in all scoop 
 
-        const angkaAcak = Math.floor(Math.random() * 100);
-        //Math.floor works for number becomes an integer
-        //Math.random works for regenerate random number
-        console.log(angkaAcak);
+    const angkaAcak = Math.floor(Math.random() * 100);
+    //Math.floor works for number becomes an integer
+    //Math.random works for regenerate random number
+
+    try {
         const responMentah = await fetch(`https://quotes.liupurnomo.com/api/quotes/${angkaAcak}`);
+        //API must inside try{..} blok, because it vulnerable to error
+        console.log(angkaAcak);
+
+        if (!responMentah.ok) {
+            //"throw" will be force to throw in catch blok 
+            // so the first result will display is 
+            // console.log("Koneksi gagal:", error); the "error" will refers to 
+            // throw new Error("Data tidak ditemukan di server! (Status: " + responMentah.status + ")")
+            throw new Error("Data tidak ditemukan di server! (Status: " + responMentah.status + ")")
+            // This will be executed if the API link is not working properly.
+        }
         const dataAsli = await responMentah.json();
         console.log("Quote Of The Day: ", dataAsli.data.text);
 
@@ -217,9 +229,8 @@ async function ambilDataInternet() {
     }
     catch (error) {
         console.log("Koneksi gagal:", error);
-
-        document.getElementById("api-quote").innerText = ("Gagal memuat data. Periksa koneksi internet Anda."); // The element must be called again because its scope is different.
-    }
+        quoteDisplay.innerText = "Gagal Memuat: Terjadi kesalahan server";    
+}
 }
 
 const changeBtn = document.getElementById("btn-api");
