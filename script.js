@@ -162,7 +162,7 @@ function downloadModulModern() {
 function mulaiKetik() {
     return new Promise(function (resolve, reject) {
         setTimeout(function(){
-            let a = false;
+            let a = true;
             if (a) {
                 resolve("Sukses 2: Mulai mengetik kode pemrograman modern.");
             }
@@ -196,5 +196,18 @@ async function eksekusiBelajar() {
         console.log(pesanGagal); // this will take reject("Gagal: Keyboard error, tidak bisa mengetik");
     }
 }
-
 eksekusiBelajar();
+
+
+async function ambilDataInternet() {
+    try {
+        const responMentah = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+        const dataAsli = await responMentah.json();
+        console.log("Judul tugas dari internet:", dataAsli.title);
+    }
+    catch (error){
+        console.log("Koneksi gagal:", error);
+    }
+}
+
+ambilDataInternet();
