@@ -162,7 +162,7 @@ function downloadModulModern() {
 function mulaiKetik() {
     return new Promise(function (resolve, reject) {
         setTimeout(function(){
-            let a = false;
+            let a = true;
             if (a) {
                 resolve("Sukses 2: Mulai mengetik kode pemrograman modern.");
             }
@@ -184,3 +184,12 @@ downloadModulModern()
     .catch(function(pesanGagal){ // it will run if second Promise false/rejected
         console.log(pesanGagal);
     });
+
+async function eksekusiBelajar() {
+    const hasil1 = await downloadModulModern();
+    console.log(hasil1);
+    const hasil2 = await mulaiKetik();
+    console.log(hasil2);
+}
+
+eksekusiBelajar();
