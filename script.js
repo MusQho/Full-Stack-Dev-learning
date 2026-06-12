@@ -129,7 +129,7 @@ incrementBtn.addEventListener("click", function () {
 function cekKelulusanCSS() {
     // make a promise with "new" in front of it
     return new Promise(function (resolve, reject) {
-        let lulus = false;
+        let lulus = true;
 
         if (lulus) {
             resolve("Selamat Alby, Anda lulus CSS"); //resolve used if the process is successful in this case if lulus = true
@@ -162,7 +162,7 @@ function downloadModulModern() {
 function mulaiKetik() {
     return new Promise(function (resolve, reject) {
         setTimeout(function(){
-            let a = true;
+            let a = false;
             if (a) {
                 resolve("Sukses 2: Mulai mengetik kode pemrograman modern.");
             }
@@ -173,23 +173,28 @@ function mulaiKetik() {
     });
 }
 
-downloadModulModern()
-    .then(function(pesanSukses) {
-        console.log(pesanSukses);
-        return mulaiKetik(); // connecting 2 Promise
-    })
-    .then(function(pesanSukses) {
-        console.log(pesanSukses);
-    })
-    .catch(function(pesanGagal){ // it will run if second Promise false/rejected
-        console.log(pesanGagal);
-    });
+// downloadModulModern()
+//     .then(function(pesanSukses) {
+//         console.log(pesanSukses);
+//         return mulaiKetik(); // connecting 2 Promise
+//     })
+//     .then(function(pesanSukses) {
+//         console.log(pesanSukses);
+//     })
+//     .catch(function(pesanGagal){ // it will run if second Promise false/rejected
+//         console.log(pesanGagal);
+//     });
 
 async function eksekusiBelajar() {
-    const hasil1 = await downloadModulModern();
-    console.log(hasil1);
-    const hasil2 = await mulaiKetik();
-    console.log(hasil2);
+    try {
+        const hasil1 = await downloadModulModern();
+        console.log(hasil1);
+        const hasil2 = await mulaiKetik();
+        console.log(hasil2);
+    }
+    catch (pesanGagal){
+        console.log(pesanGagal); // this will take reject("Gagal: Keyboard error, tidak bisa mengetik");
+    }
 }
 
 eksekusiBelajar();
