@@ -153,7 +153,7 @@ cekKelulusanCSS()
 
 function downloadModulModern() {
     return new Promise(function (resolve) {
-        setTimeout(function() {
+        setTimeout(function () {
             resolve("Sukses 1: Modul JavaScript Berhasil Di-download.");
         }, 2000);
     });
@@ -161,7 +161,7 @@ function downloadModulModern() {
 
 function mulaiKetik() {
     return new Promise(function (resolve, reject) {
-        setTimeout(function(){
+        setTimeout(function () {
             let a = true;
             if (a) {
                 resolve("Sukses 2: Mulai mengetik kode pemrograman modern.");
@@ -192,7 +192,7 @@ async function eksekusiBelajar() {
         const hasil2 = await mulaiKetik();
         console.log(hasil2);
     }
-    catch (pesanGagal){
+    catch (pesanGagal) {
         console.log(pesanGagal); // this will take reject("Gagal: Keyboard error, tidak bisa mengetik");
     }
 }
@@ -201,23 +201,28 @@ eksekusiBelajar();
 
 async function ambilDataInternet() {
     try {
-        const dataAsliDisplay = document.getElementById("api-title");
+        const quoteDisplay = document.getElementById("api-quote");
+        const authorDisplay = document.getElementById("api-author");
 
-        const angkaAcak = Math.floor(Math.random() * 200) + 1;
+        const angkaAcak = Math.floor(Math.random() * 100);
         //Math.floor works for number becomes an integer
         //Math.random works for regenerate random number
         console.log(angkaAcak);
-        const responMentah = await fetch(`https://jsonplaceholder.typicode.com/todos/${angkaAcak}`);
+        const responMentah = await fetch(`https://quotes.liupurnomo.com/api/quotes/${angkaAcak}`);
         const dataAsli = await responMentah.json();
-        console.log("Judul tugas dari internet:", dataAsli.title);
+        console.log("Quote Of The Day: ", dataAsli.data.text);
 
-        dataAsliDisplay.innerText = "Judul tugas dari internet: " + (dataAsli.title);
+        quoteDisplay.innerText = (dataAsli.data.text);
+        authorDisplay.innerText = `- ${dataAsli.data.author} -`;
     }
-    catch (error){
+    catch (error) {
         console.log("Koneksi gagal:", error);
 
-        document.getElementById("api-title").innerText = ("Gagal memuat data. Periksa koneksi internet Anda."); // The element must be called again because its scope is different.
+        document.getElementById("api-quote").innerText = ("Gagal memuat data. Periksa koneksi internet Anda."); // The element must be called again because its scope is different.
     }
 }
 
-ambilDataInternet();
+const changeBtn = document.getElementById("btn-api");
+changeBtn.addEventListener("click", function () {
+    ambilDataInternet();
+});
